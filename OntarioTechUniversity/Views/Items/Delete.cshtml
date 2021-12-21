@@ -1,0 +1,121 @@
+﻿@model OntarioTechUniversity.Models.Item
+
+@{ ViewData["Title"] = "Delete"; }
+
+<h1>Are you sure you want to delete this?</h1>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.ItemName)</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemNum)
+        </dd>
+        <!-------------------------------------------------------------------->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <!---->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <!---->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+         <!-------------------------------------------------------------------->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+         <!-------------------------------------------------------------------->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TagNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TagNumber)
+        </dd>
+        <!------------------------------------------------------------------------>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location.LocationID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductOverview)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductOverview)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MSDS)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MSDS)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductManual)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductManual)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RecommendedMaintenance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RecommendedMaintenance)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WasteManagement)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WasteManagement)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Certification)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Certification)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateModified)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateModified)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemComment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemComment)
+        </dd>
+
+    </dl>
+
+    <form asp-action="Delete">
+        <div class="container" style=" display: flex; flex-direction:row; height:39px; padding-left:0px;">
+            <div class="form-group .col-6 .col-md-4">
+                <input type="hidden" asp-for="ItemID" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+                <div>
+                    <a asp-action="Index" class="btn btn-secondary col" style="margin-left:12px;">Back</a>
+                </div>
+            </div>
+</form>
+</div>

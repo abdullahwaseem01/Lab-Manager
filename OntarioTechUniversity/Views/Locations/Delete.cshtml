@@ -1,0 +1,32 @@
+﻿@model OntarioTechUniversity.Models.Location
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Are you sure you want to delete this?</h1>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.LocationID)</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="container" style=" display: flex; flex-direction:row; height:39px; padding-left:0px;">
+            <div class="form-group .col-6 .col-md-4">
+                <input type="hidden" asp-for="LocationID" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+            <div>
+                <a asp-action="Index" class="btn btn-secondary col" style="margin-left:12px;">Back</a>
+            </div>
+        </div>
+    </form>
+</div>

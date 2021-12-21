@@ -1,0 +1,29 @@
+﻿@model OntarioTechUniversity.Models.Location
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h4>@Html.DisplayFor(model => model.LocationID)</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+    </dl>
+</div>
+<div class="container" style=" display: flex; flex-direction:row; height:39px; padding-left:0px;">
+    <div class="form-group .col-6 .col-md-4">
+        <a asp-action="Edit" asp-route-id="@Model.LocationID" class="btn btn-primary">Edit</a>
+    </div>
+    <div>
+        <a asp-action="Index" class="btn btn-secondary col" style="margin-left:12px;">Back</a>
+    </div>
+</div>
+<table class="table">
+</table>

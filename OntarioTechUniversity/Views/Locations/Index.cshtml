@@ -1,0 +1,64 @@
+﻿@model IEnumerable<OntarioTechUniversity.Models.Location>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Locations</h1>
+
+<form asp-controller="Locations" asp-action="Index" method="get">
+    <p>
+        <div class="container" style=" display: flex; flex-direction:row; justify-content: center; height:39px;">
+            <div class="col">
+                <input type="text" name="SearchString" placeholder="Search for Location" />
+            </div>
+            <div class=".col-6 .col-md-4">
+                <input class="btn btn-primary" style="background-color: #f4511e;" type="submit" value="Search">
+            </div>
+            <div>
+                <a asp-action="Index" style="margin-left: 17px;" class=" btn btn-dark">Back to Full List</a>
+            </div>
+            <div class="col" style="max-height:43px">
+                <a class="btn btn-primary" style="max-height:43px" asp-action="Create">Create New</a>
+            </div>
+        </div>
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                <div class="text-center">
+                    <div class="row" style=" display: inline-block; vertical-align: top;">
+
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.LocationID">Edit</a>
+
+                        <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.LocationID">Details</a>
+
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.LocationID">Delete</a>
+
+                    </div>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
